@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sqlconnection;
+package sqlconnection.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,8 @@ import java.sql.SQLException;
  * @author chris940913
  */
 class DButil {
-private static final String connectionURL1="jdbc:sqlserver://localhost:1433;databaseName=BOMDB;user=TestingUser;password=12345";
+    
+    private static final String connectionURL1="jdbc:sqlserver://localhost:1433;databaseName=BOMDB;user=TestingUser;password=12345";
 
    
         public static Connection getConnection(DBtype dbtype) throws SQLException{
@@ -38,7 +39,5 @@ private static final String connectionURL1="jdbc:sqlserver://localhost:1433;data
               System.err.println("SQL state :"+e.getSQLState());
           }
 
-        
-        
-        }   
-        
+    
+}

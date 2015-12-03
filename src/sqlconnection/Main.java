@@ -8,6 +8,9 @@ package sqlconnection;
 import java.sql.*;
 import java.sql.SQLException;
 import java.util.Scanner;
+import sqlconnection.DAO.OrderDAO;
+import sqlconnection.beans.Order;
+import sqlconnection.util.Input;
 
 /**
  *
@@ -18,16 +21,10 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, Exception {
 
-        Connection con = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DButil.getConnection(DBtype.MSQLS);
-            System.out.println("Database Connected.");
+     
+     
 
             Scanner sc = new Scanner(System.in);
             boolean quit = false;
@@ -44,6 +41,17 @@ public class Main {
                 int choice = sc.nextInt();
                 switch (choice) {
                     case 1:
+                        
+                        Order bean = new Order();
+                        bean.setOrderNo(Input.getInput("Order NO:"));
+                        bean.setProdCode(Input.getInput("pROD code:"));
+                        bean.setQty(Input.getIntegerInput("QTY:"));
+                        
+                        boolean result= OrderDAO.insert(bean);
+                    
+                        
+                        
+                        
                         break;
                     case 2:
                         break;
@@ -62,20 +70,7 @@ public class Main {
 
             } while (!quit);
 
-        } catch (SQLException e) {
-            DButil.processException(e);
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (stmt != null) {
-                stmt.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-
+    
     }
 
 }
