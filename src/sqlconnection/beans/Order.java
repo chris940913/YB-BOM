@@ -15,6 +15,19 @@ public class Order {
     private String ProdCode;
     private int Qty;
 
+    public Order(String OrderNo, String ProdCode, int Qty) {
+        this.OrderNo = OrderNo;
+        this.ProdCode = ProdCode;
+        this.Qty = Qty;
+    }
+
+    public Order() {
+    }
+
+  
+    
+    
+
     public String getOrderNo() {
         return OrderNo;
     }
@@ -38,6 +51,12 @@ public class Order {
     public void setQty(int Qty) {
         this.Qty = Qty;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" + "OrderNo=" + OrderNo + ", ProdCode=" + ProdCode + ", Qty=" + Qty + '}';
+    }
+    
     
     
     
