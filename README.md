@@ -1,2 +1,3 @@
 # YB-BOM
-Build of Material Software
+Open source bill of Material Software
+© Fui Yang Yap
