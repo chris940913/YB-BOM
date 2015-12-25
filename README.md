@@ -1,3 +1,4 @@
 # YB-BOM
 Open source bill of Material Software
-© Fui Yang Yap
+© YB WoodWork Industry(M)
+Author: Chris Yap Fui Yang
