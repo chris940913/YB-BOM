@@ -4,9 +4,12 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
+<<<<<<< HEAD
   <BindingProperties>
     <BindingProperty name="title" source="Form" sourcePath="Login_Form" target="Form" targetPath="title" updateStrategy="0" immediately="false"/>
   </BindingProperties>
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -31,7 +34,11 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="jInternalFrame1" alignment="0" max="32767" attributes="0"/>
+=======
+          <Component id="jInternalFrame1" min="-2" max="-2" attributes="0"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
       </Group>
     </DimensionLayout>
   </Layout>
@@ -58,7 +65,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <Component id="jPanel1" pref="186" max="32767" attributes="0"/>
+=======
+                  <Component id="jPanel1" pref="182" max="32767" attributes="0"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -84,7 +95,11 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="70" y="30" width="75" height="25"/>
+=======
+                  <AbsoluteConstraints x="91" y="29" width="75" height="25"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>
@@ -96,7 +111,11 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="171" y="31" width="110" height="25"/>
+=======
+                  <AbsoluteConstraints x="194" y="31" width="87" height="25"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>
@@ -113,7 +132,11 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="70" y="70" width="85" height="25"/>
+=======
+                  <AbsoluteConstraints x="91" y="67" width="85" height="25"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>
@@ -122,6 +145,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="12" style="1"/>
                 </Property>
+<<<<<<< HEAD
+=======
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\lue\Pictures\ok_16x16.gif"/>
+                </Property>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 <Property name="text" type="java.lang.String" value="OK"/>
               </Properties>
               <Events>
@@ -133,7 +162,11 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="90" y="130" width="73" height="30"/>
+=======
+                  <AbsoluteConstraints x="69" y="132" width="73" height="30"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>
@@ -149,6 +182,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="12" style="1"/>
                 </Property>
+<<<<<<< HEAD
+=======
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\lue\Downloads\cancel.png"/>
+                </Property>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 <Property name="text" type="java.lang.String" value="Cancel"/>
               </Properties>
               <Events>
@@ -156,7 +195,11 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="190" y="130" width="-1" height="30"/>
+=======
+                  <AbsoluteConstraints x="178" y="132" width="-1" height="30"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>
@@ -168,7 +211,11 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
                   <AbsoluteConstraints x="171" y="69" width="110" height="25"/>
+=======
+                  <AbsoluteConstraints x="194" y="69" width="87" height="25"/>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 </Constraint>
               </Constraints>
             </Component>

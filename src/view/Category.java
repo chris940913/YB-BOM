@@ -11,8 +11,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+<<<<<<< HEAD
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -21,6 +24,7 @@ import net.proteanit.sql.DbUtils;
  * @author lue
  */
 public class Category extends javax.swing.JFrame {
+<<<<<<< HEAD
     
     String user = "root";
     String password = "admin";
@@ -38,6 +42,18 @@ public class Category extends javax.swing.JFrame {
         Display_table();
         
     }
+=======
+
+    /**
+     * Creates new form Category
+     */
+    String Id = "";
+    public Category() {
+        initComponents();
+        Connection();
+    }
+
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,18 +61,40 @@ public class Category extends javax.swing.JFrame {
      */
     public void Query(String query){
         
+<<<<<<< HEAD
       try{
           con = DriverManager.getConnection(db,user,password);
           st = con.createStatement();
           st.executeUpdate(query);
           JOptionPane.showMessageDialog(null,"Successfully....");
 
+=======
+      Connection con = null;
+      Statement st = null;
+      try{
+          con = DriverManager.getConnection("jdbc:mysql://localhost/ybbom","root","admin");
+          st = con.createStatement();
+          st.executeUpdate(query);
+          JOptionPane.showMessageDialog(null,"Successfully....");
+          this.setVisible(false);
+          Category cat = new Category();
+          cat.setVisible(true);
+          
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
       }catch(Exception ex){
           JOptionPane.showMessageDialog(null,ex.getMessage());
       }
   }
     
+<<<<<<< HEAD
     public void Display_table() {
+=======
+    public void Connection() {
+        
+        String user = "root";
+        String password = "admin";
+        String db="jdbc:mysql://localhost/ybbom";
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         
         try {
             
@@ -66,6 +104,7 @@ public class Category extends javax.swing.JFrame {
             PreparedStatement pst =conn.prepareStatement(Query);
             ResultSet rs = pst.executeQuery();
             jTable2.setModel(DbUtils.resultSetToTableModel(rs));
+<<<<<<< HEAD
             
             
         }catch(Exception e) {
@@ -79,6 +118,20 @@ public class Category extends javax.swing.JFrame {
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+=======
+        }catch(Exception e) {
+            
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -91,9 +144,12 @@ public class Category extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,6 +166,7 @@ public class Category extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+<<<<<<< HEAD
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("Add_Category"), this, org.jdesktop.beansbinding.BeanProperty.create("title"));
         bindingGroup.addBinding(binding);
@@ -133,16 +190,48 @@ public class Category extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("Description :");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 90, 29));
+=======
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("  Category");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 559, -1));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Category Entry", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(0, 0, 102))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 74, 323, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Item Category");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 111, 84, 31));
+
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 111, 190, 31));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel9.setText("Description");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 148, 84, 29));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+<<<<<<< HEAD
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 190, -1));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/refresh.png"))); // NOI18N
+=======
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 148, 190, -1));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton1.setText("ADD");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -150,10 +239,16 @@ public class Category extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 38));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
+=======
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 68, 38));
+
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton3.setText("DELETE");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -161,10 +256,16 @@ public class Category extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 80, 38));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.gif"))); // NOI18N
+=======
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 30, 80, 38));
+
+        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton4.setText("EDIT");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -172,10 +273,16 @@ public class Category extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 38));
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Save.png"))); // NOI18N
+=======
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 80, 38));
+
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton5.setText("SAVE");
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +290,7 @@ public class Category extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 38));
 
         jTable2.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
@@ -192,6 +300,41 @@ public class Category extends javax.swing.JFrame {
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3"
+=======
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 80, 38));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             }
         ));
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -201,22 +344,33 @@ public class Category extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTable2);
 
+<<<<<<< HEAD
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 10, 270, 310));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 40, -1));
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 20, 310));
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 260, 20));
 
         bindingGroup.bind();
+=======
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 30, 240, 270));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+<<<<<<< HEAD
         
         if(jTextField1.getText().length()==0 || jTextArea1.getText().length() == 0 )  // Checking for empty field
             
             JOptionPane.showMessageDialog(null, "Please fill Empty Text!!");
+=======
+        // TODO add your handling code here:
+        if(jTextField1.getText().length()==0 || jTextArea1.getText().length() == 0 )  // Checking for empty field
+            
+            JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         else
         {
             String item = jTextField1.getText();
@@ -225,8 +379,11 @@ public class Category extends javax.swing.JFrame {
             try{
                     Query("insert into categories (name,description) "
                             + "values('"+item+"','"+description+"')");
+<<<<<<< HEAD
                     Display_table();
                     
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                     }catch(Exception e){
                         e.printStackTrace();
                  }
@@ -234,18 +391,25 @@ public class Category extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
        
         jTextField1.setText("");
         jTextArea1.setText("");
         
+=======
+        // TODO add your handling code here:
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         try{ 
             Query("delete from categories where Id = "+Id); 
+<<<<<<< HEAD
             Display_table();
             
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
            } catch(Exception ex) {
               }
         
@@ -254,8 +418,12 @@ public class Category extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
         try{ 
+<<<<<<< HEAD
                 Query("update categories set name = '"+jTextField1.getText()+"',description ='"+jTextArea1.getText()+"' where Id ="+Id);
                 Display_table();
+=======
+                Query("update categories set name = '"+jTextField1.getText()+"',description ='"+jTextArea1.getText()+"' where Id ="+Id); 
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             } 
             catch(Exception ex){
             }
@@ -275,12 +443,19 @@ public class Category extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+=======
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -288,6 +463,9 @@ public class Category extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+<<<<<<< HEAD
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     // End of variables declaration//GEN-END:variables
 }

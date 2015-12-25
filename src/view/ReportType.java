@@ -5,8 +5,11 @@
  */
 package view;
 
+<<<<<<< HEAD
 import java.awt.Toolkit;
 
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 /**
  *
  * @author
@@ -18,11 +21,14 @@ public class ReportType extends javax.swing.JFrame {
      */
     public ReportType() {
         initComponents();
+<<<<<<< HEAD
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.setResizable(false);
         this.setTitle("Report_Types");
         this.setLocationRelativeTo(this);
         this.pack();
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }
 
     /**
@@ -90,17 +96,26 @@ public class ReportType extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+<<<<<<< HEAD
         
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         Object obj = reportcombobox.getSelectedItem();
         if(obj!=null && obj.equals("Order By Material")) 
         {
             GetOrderId oid = new GetOrderId();
         oid.setVisible(true);
         }
+<<<<<<< HEAD
        else if(obj!=null && obj.equals("Cutting report")) 
         {
             CuttingReport cutreport  = new CuttingReport();
             cutreport.setVisible(true);
+=======
+        else
+        {
+            
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         }
                
         

@@ -3,11 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/E:/Chris_Yap_YB_BOM/YB-BOM/src/view/NewUser.java</file>
             <file>file:/E:/Chris_Yap_YB_BOM/YB-BOM/src/view/MainScreen.java</file>
             <file>file:/E:/Chris_Yap_YB_BOM/YB-BOM/src/view/Admin.java</file>
             <file>file:/E:/Chris_Yap_YB_BOM/YB-BOM/src/view/Category.java</file>
             <file>file:/E:/Chris_Yap_YB_BOM/YB-BOM/src/view/CustomerOrder.java</file>
+=======
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/ColorEntry.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/MainScreen.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/ReportType.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/Category.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/NewUser.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/GetOrderId.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/Customer.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/Admin.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/OrderTableModel.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/RawItem.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/PdfReporter.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/Product.java</file>
+            <file>file:/C:/Users/yang/Documents/NetBeansProjects2/YB_BOM/YB-BOM/src/view/CustomerOrder.java</file>
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         </group>
     </open-files>
 </project-private>

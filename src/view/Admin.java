@@ -16,10 +16,13 @@ import javax.swing.JOptionPane;
  * @author lue
  */
 public class Admin extends javax.swing.JFrame {
+<<<<<<< HEAD
     
     String db="jdbc:mysql://localhost/ybbom";
     String user="root";
     String pwd="admin";
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
     /**
      * Creates new form Admin
@@ -31,6 +34,7 @@ public class Admin extends javax.swing.JFrame {
     
     private boolean validate_login(String username,String password) {
      try{  
+<<<<<<< HEAD
          
          Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
          Connection conn = DriverManager.getConnection(db,user,pwd);  
@@ -38,6 +42,17 @@ public class Admin extends javax.swing.JFrame {
          pst.setString(1, username); 
          pst.setString(2, password);
          ResultSet rs = pst.executeQuery();  
+=======
+         String db="jdbc:mysql://localhost/ybbom";
+         String user="root";
+         String pwd="admin";
+         Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
+         Connection conn = DriverManager.getConnection(db,user,pwd);  
+       PreparedStatement pst = conn.prepareStatement("Select UserId,Password from login where UserId=? and Password=?");
+       pst.setString(1, username); 
+       pst.setString(2, password);
+       ResultSet rs = pst.executeQuery();  
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
        
        if(rs.next())            
            return true;    
@@ -67,12 +82,18 @@ public class Admin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+<<<<<<< HEAD
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("Login_Form"), this, org.jdesktop.beansbinding.BeanProperty.create("title"));
         bindingGroup.addBinding(binding);
 
         jInternalFrame1.setVisible(true);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jInternalFrame1, org.jdesktop.beansbinding.ELProperty.create("Login"), jInternalFrame1, org.jdesktop.beansbinding.BeanProperty.create("title"));
+=======
+        jInternalFrame1.setVisible(true);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jInternalFrame1, org.jdesktop.beansbinding.ELProperty.create("Login"), jInternalFrame1, org.jdesktop.beansbinding.BeanProperty.create("title"));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         bindingGroup.addBinding(binding);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,16 +102,27 @@ public class Admin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User ID");
+<<<<<<< HEAD
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 75, 25));
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 31, 110, 25));
+=======
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 29, 75, 25));
+
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 31, 87, 25));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
+<<<<<<< HEAD
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 85, 25));
+=======
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 67, 85, 25));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lue\\Pictures\\ok_16x16.gif")); // NOI18N
@@ -100,7 +132,11 @@ public class Admin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 73, 30));
+=======
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 132, 73, 30));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 353, -1));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -111,10 +147,17 @@ public class Admin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, 30));
 
         jPasswordField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 69, 110, 25));
+=======
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 132, -1, 30));
+
+        jPasswordField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 69, 87, 25));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -129,7 +172,11 @@ public class Admin extends javax.swing.JFrame {
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+=======
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 .addContainerGap())
         );
 
@@ -141,7 +188,11 @@ public class Admin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jInternalFrame1)
+=======
+            .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         );
 
         bindingGroup.bind();
@@ -150,6 +201,7 @@ public class Admin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
         
         if(jTextField1.getText().length()==0)  // Checking for empty field
             
@@ -161,19 +213,34 @@ public class Admin extends javax.swing.JFrame {
          
          else{
              
+=======
+        // TODO add your handling code here:
+        if(jTextField1.getText().length()==0)  // Checking for empty field
+            JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
+         else if(jPasswordField1.getPassword().length==0)  // Checking for empty field
+            JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
+         else{
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
            String user = jTextField1.getText();   // Collecting the input
            char[] pass = jPasswordField1.getPassword(); // Collecting the input
            String pwd = String.copyValueOf(pass);  // converting from array to string
            
            if(validate_login(user,pwd)) {
+<<<<<<< HEAD
                
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                MainScreen system = new MainScreen();
                system.setVisible(true);
                this.dispose();
            }
            else
+<<<<<<< HEAD
                
                JOptionPane.showMessageDialog(null, "Incorrect Login UserId and Password");
+=======
+               JOptionPane.showMessageDialog(null, "Incorrect Login Credentials");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         }  
     }//GEN-LAST:event_jButton1ActionPerformed
 

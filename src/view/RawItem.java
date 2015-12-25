@@ -33,8 +33,12 @@ public class RawItem extends javax.swing.JFrame {
         
         initComponents();
         comboBox();
+<<<<<<< HEAD
         Display_Table();
         
+=======
+        Connection();
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,34 +53,59 @@ public class RawItem extends javax.swing.JFrame {
           st.executeUpdate(query);
           JOptionPane.showMessageDialog(null,"Successfully....");
           
+<<<<<<< HEAD
+=======
+          this.setVisible(false);
+          RawItem raw = new RawItem();
+          raw.setVisible(true);
+          
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
       }catch(Exception ex){
           JOptionPane.showMessageDialog(null,ex.getMessage());
       }
     }
     
+<<<<<<< HEAD
     public void Display_Table() {
+=======
+    public void Connection() {
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         
         try {
             
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(db,user,password);
+<<<<<<< HEAD
             String Query = "select ItemCode, Category,ColorD1, ColorD2  from rawmaterial";
             PreparedStatement pst =conn.prepareStatement(Query);
             ResultSet rs = pst.executeQuery();
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             
+=======
+            String Query = "select ItemCode, ColorD1,ColorD2, UnitPrice from rawmaterial";
+            PreparedStatement pst =conn.prepareStatement(Query);
+            ResultSet rs = pst.executeQuery();
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         }catch(Exception e) {
             
         }
     }   
 
     private void comboBox(){
+<<<<<<< HEAD
         
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         try {  
             Class.forName("com.mysql.jdbc.Driver");  
              conn= DriverManager.getConnection(db,user,password);  
             Statement st = conn.createStatement();
+<<<<<<< HEAD
             ResultSet r=st.executeQuery("select name from categories ORDER BY name");
+=======
+            ResultSet r=st.executeQuery("select name from categories");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
             while (r.next()) {                     
                     jComboBox1.addItem(r.getString("name"));                   
@@ -84,14 +113,21 @@ public class RawItem extends javax.swing.JFrame {
             conn.close();
            } catch (Exception e) {  
                     JOptionPane.showMessageDialog(null,"Failed to Connect to Database","Error Connection", JOptionPane.WARNING_MESSAGE);  
+<<<<<<< HEAD
                    
+=======
+                    //System.exit(0);  
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         }        
     }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+<<<<<<< HEAD
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -112,6 +148,7 @@ public class RawItem extends javax.swing.JFrame {
         jComboBox4 = new javax.swing.JComboBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+<<<<<<< HEAD
         jLabel7 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
 
@@ -125,6 +162,14 @@ public class RawItem extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/refresh.png"))); // NOI18N
+=======
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton1.setText("ADD");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,10 +177,16 @@ public class RawItem extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
+=======
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 80, 40));
+
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton3.setText("DELETE");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -143,10 +194,16 @@ public class RawItem extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 90, 40));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.gif"))); // NOI18N
+=======
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 40));
+
+        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton4.setText("EDIT");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -154,10 +211,16 @@ public class RawItem extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 70, 40));
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Save.png"))); // NOI18N
+=======
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 11, 80, 40));
+
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton5.setText("SAVE");
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +228,7 @@ public class RawItem extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 80, 40));
 
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Raw Material", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(0, 0, 102))); // NOI18N
@@ -202,23 +266,72 @@ public class RawItem extends javax.swing.JFrame {
         jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 51, 204));
+=======
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 11, 90, 40));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Raw Material", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(0, 0, 102))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 349, -1));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("Description");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 243, 94, 34));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("Unit Price");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 205, 94, 32));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("Color Selection");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 166, -1, 24));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Category");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 132, 94, 25));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("Item Code");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 98, 94, 25));
+
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 96, 161, 30));
+
+        jComboBox1.setEditable(true);
+        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 51, 204));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "POLYFOAM", "CHIPBOARD", "HARDWARE" }));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 160, 30));
+=======
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 132, 160, -1));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jComboBox3.setEditable(true);
         jComboBox3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(0, 0, 255));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
+<<<<<<< HEAD
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 80, 31));
+=======
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 80, 31));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 0, 204));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+<<<<<<< HEAD
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 161, 32));
 
         jTextArea1.setColumns(20);
@@ -227,6 +340,15 @@ public class RawItem extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 161, 70));
+=======
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 161, 32));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 161, 70));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jComboBox4.setEditable(true);
         jComboBox4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -237,6 +359,7 @@ public class RawItem extends javax.swing.JFrame {
                 jComboBox4ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 80, 31));
 
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
@@ -246,6 +369,33 @@ public class RawItem extends javax.swing.JFrame {
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
+=======
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 80, 31));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,6 +405,7 @@ public class RawItem extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable1);
 
+<<<<<<< HEAD
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 360, 370));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -265,16 +416,23 @@ public class RawItem extends javax.swing.JFrame {
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 160, 30));
 
         bindingGroup.bind();
+=======
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 11, 290, 330));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
         
         jTextArea1.setText("");
         jTextField1.setText("");
         jTextField2.setText("");
+=======
+        // TODO add your handling code here:
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -282,8 +440,13 @@ public class RawItem extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+<<<<<<< HEAD
        
         if(jTextField1.getText().length()==0 || jTextField2.getText().length() == 0 || jTextField3.getText().length() == 0)  // Checking for empty field
+=======
+        // TODO add your handling code here:
+        if(jTextField1.getText().length()==0 || jTextField2.getText().length() == 0)  // Checking for empty field
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             
                     JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
         
@@ -297,6 +460,7 @@ public class RawItem extends javax.swing.JFrame {
                     String category = jComboBox1.getSelectedItem().toString();
                     String color1 = jComboBox3.getSelectedItem().toString();
                     String color2 = jComboBox4.getSelectedItem().toString();
+<<<<<<< HEAD
                     String spec = jTextField3.getText();
                     String description = jTextArea1.getText(); // Collecting the input
                    
@@ -306,6 +470,14 @@ public class RawItem extends javax.swing.JFrame {
                     Display_Table();
                             
                 }
+=======
+                    String description = jTextArea1.getText(); // Collecting the input
+                   
+                try{
+                    Query("insert into rawmaterial (ItemCode,ColorD1,ColorD2,Category,UnitPrice,LastUpdate)"
+                            + "values('"+itemCode+"','"+color1+"','"+color2+"','"+category+"','"+price+"','"+description+"')");
+                  }
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                     catch(Exception e){
                         e.printStackTrace();
                     }
@@ -317,18 +489,28 @@ public class RawItem extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         id=model.getValueAt(jTable1.getSelectedRow(), 0).toString();
         jTextField1.setText(model.getValueAt(jTable1.getSelectedRow(), 0).toString());
+<<<<<<< HEAD
         jComboBox1.setSelectedItem(model.getValueAt(jTable1.getSelectedRow(), 1).toString());
         jComboBox3.setSelectedItem(model.getValueAt(jTable1.getSelectedRow(), 2).toString());
         jComboBox4.setSelectedItem(model.getValueAt(jTable1.getSelectedRow(), 3).toString());
         
+=======
+        jComboBox3.setSelectedItem(model.getValueAt(jTable1.getSelectedRow(), 1).toString());
+        jComboBox4.setSelectedItem(model.getValueAt(jTable1.getSelectedRow(), 2).toString());
+        jTextField2.setText(model.getValueAt(jTable1.getSelectedRow(), 3).toString());
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
         try{ 
                 Query("update rawmaterial set ItemCode = '"+jTextField1.getText()+"',Category = '"+jComboBox1.getSelectedItem()+"', ColorD1 = '"+jComboBox3.getSelectedItem().toString()+"', ColorD2 = '"+jComboBox4.getSelectedItem().toString()+"', UnitPrice = '"+jTextField2.getText()+"', LastUpdate = '"+jTextArea1.getText()+"' where ItemCode ='"+id+"'"); 
+<<<<<<< HEAD
                 Display_Table();
         } 
+=======
+            } 
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             catch(Exception ex){
             }
         
@@ -338,11 +520,17 @@ public class RawItem extends javax.swing.JFrame {
             
             try{ 
             Query("delete from rawmaterial where ItemCode = "+jTextField1.getText()); 
+<<<<<<< HEAD
                 Display_Table();
                 
            } catch(Exception ex)
             {
                 }
+=======
+           } catch(Exception ex)
+           {
+              }
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
@@ -363,14 +551,20 @@ public class RawItem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel7;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+<<<<<<< HEAD
     private javax.swing.JTextField jTextField3;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     // End of variables declaration//GEN-END:variables
 }

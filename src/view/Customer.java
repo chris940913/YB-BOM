@@ -18,6 +18,7 @@ import net.proteanit.sql.DbUtils;
  * @author lue
  */
 public class Customer extends javax.swing.JFrame {
+<<<<<<< HEAD
     
     
     Connection con = null;
@@ -34,6 +35,15 @@ public class Customer extends javax.swing.JFrame {
         
         initComponents();
         Display_Table();
+=======
+    /**
+     * Creates new form Customer
+     */
+    public String productId=null;
+    public Customer() {
+        initComponents();
+        Connection();
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,19 +54,42 @@ public class Customer extends javax.swing.JFrame {
     //function to execute the insert query
     public void Query(String query){
         
+<<<<<<< HEAD
       try{
           con = DriverManager.getConnection(db,user,password);
           st = con.createStatement();
           st.executeUpdate(query);
           JOptionPane.showMessageDialog(null,"Successfully...");
  
+=======
+      Connection con = null;
+      Statement st = null;
+      try{
+          con = DriverManager.getConnection("jdbc:mysql://localhost/ybbom","root","root");
+          st = con.createStatement();
+          st.executeUpdate(query);
+          JOptionPane.showMessageDialog(null,"Successfully...");
+          
+          this.setVisible(false);
+          Customer customer = new Customer();
+          customer.setVisible(true);
+          
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
       }catch(Exception ex){
           JOptionPane.showMessageDialog(null,ex.getMessage());
       }
     }
     
+<<<<<<< HEAD
     public void Display_Table() {
         
+=======
+    public void Connection() {
+        
+        String user = "root";
+        String password = "root";
+        String db="jdbc:mysql://localhost/ybbom";
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         
         try {
             
@@ -75,8 +108,13 @@ public class Customer extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+<<<<<<< HEAD
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+=======
+
+        jLabel1 = new javax.swing.JLabel();
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -97,6 +135,10 @@ public class Customer extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jTextField9 = new javax.swing.JTextField();
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jLabel17 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
@@ -106,14 +148,18 @@ public class Customer extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         custinfo = new javax.swing.JTable();
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setResizable(false);
+<<<<<<< HEAD
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("Customer Information"), this, org.jdesktop.beansbinding.BeanProperty.create("title"));
         bindingGroup.addBinding(binding);
@@ -150,11 +196,50 @@ public class Customer extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Address :");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 95, 29));
+=======
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setText("Customer Information Entry/Edit");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 22));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Customer Code");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 103, 100, 30));
+
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 175, 30));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Customer Name");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 141, -1, 27));
+
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 175, 30));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("Registration Code");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 179, -1, 27));
+
+        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 177, 175, 30));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel10.setText("Address");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 217, 95, 29));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+<<<<<<< HEAD
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 174, 68));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -170,10 +255,28 @@ public class Customer extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setText("City :");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 94, 30));
+=======
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 174, 68));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel11.setText("Post Code");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 301, 94, 24));
+
+        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 170, 30));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("City");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 342, 94, 30));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setAlignmentX(0.6F);
+<<<<<<< HEAD
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 170, 30));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -228,6 +331,60 @@ public class Customer extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/refresh.png"))); // NOI18N
+=======
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 170, 30));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel13.setText("State");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 94, 30));
+
+        jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 170, 30));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("Country");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 94, 26));
+
+        jTextField7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 170, 30));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setText("Phone No");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 461, 94, 30));
+
+        jTextField8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 170, 30));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel16.setText("Fax No");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 94, 24));
+
+        jTextField9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 170, 30));
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel17.setText("Contact Person");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 94, 26));
+
+        jTextField10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 170, 30));
+
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Customer Entry", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(0, 51, 153))); // NOI18N
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 309, 18));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton1.setText("ADD");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -235,10 +392,16 @@ public class Customer extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
+=======
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 70, 40));
+
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton3.setText("DELETE");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -246,10 +409,16 @@ public class Customer extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 90, 40));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.gif"))); // NOI18N
+=======
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 70, 40));
+
+        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton4.setText("EDIT");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -257,10 +426,16 @@ public class Customer extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 80, 40));
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Save.png"))); // NOI18N
+=======
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 80, 40));
+
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         jButton5.setText("SAVE");
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -268,6 +443,7 @@ public class Customer extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 80, 39));
 
         custinfo.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
@@ -277,6 +453,40 @@ public class Customer extends javax.swing.JFrame {
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3"
+=======
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 70, 39));
+
+        custinfo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             }
         ));
         custinfo.setToolTipText("");
@@ -287,6 +497,7 @@ public class Customer extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(custinfo);
+<<<<<<< HEAD
         if (custinfo.getColumnModel().getColumnCount() > 0) {
             custinfo.getColumnModel().getColumn(0).setHeaderValue("Title 1");
             custinfo.getColumnModel().getColumn(1).setHeaderValue("Title 2");
@@ -303,6 +514,10 @@ public class Customer extends javax.swing.JFrame {
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 170, 30));
 
         bindingGroup.bind();
+=======
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 28, 400, 560));
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 
         pack();
         setLocationRelativeTo(null);
@@ -310,6 +525,7 @@ public class Customer extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+<<<<<<< HEAD
         jTextArea1.setText("");
         jTextField1.setText("");
         jTextField2.setText("");
@@ -322,14 +538,26 @@ public class Customer extends javax.swing.JFrame {
         jTextField9.setText("");
         jTextField10.setText("");
         
+=======
+        DefaultTableModel model = (DefaultTableModel) custinfo.getModel();
+        if(!jTextField1.getText().trim().equals("")) {
+            model.addRow(new Object[]{jTextField1.getText(),jTextField2.getText(),jTextField3.getText(), jTextArea1.getText(), jTextField4.getText(),});
+        }else {
+            System.err.println("Customer Information should be not left black");
+        }
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         try{ 
+<<<<<<< HEAD
             Query("delete from customerinfo where Id = "+productId);
             Display_Table();
             
+=======
+            Query("delete from customerinfo where Id = "+productId); 
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
            } catch(Exception ex)
            {
               } 
@@ -339,8 +567,12 @@ public class Customer extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        
             try{ 
+<<<<<<< HEAD
                 Query("update customerinfo set CustomerCode = '"+jTextField1.getText()+"',Name = '"+jTextField2.getText()+"', RegCode = '"+jTextField3.getText()+"' where id ='"+productId+"'"); 
                 Display_Table();
+=======
+                Query("update customerinfo set CustomerCode = '"+jTextField1.getText()+"',Name = '"+jTextField2.getText()+"', RegCode = "+jTextField3.getText()+" where id ="+productId); 
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             } 
             catch(Exception ex){
             } 
@@ -354,11 +586,19 @@ public class Customer extends javax.swing.JFrame {
                 jTextField5.getText().length()==0 || jTextField6.getText().length()==0 || jTextField7.getText().length()==0 || jTextField8.getText().length()==0 ||
                 jTextField9.getText().length()==0 || jTextField10.getText().length()==0)  // Checking for empty field
             
+<<<<<<< HEAD
                     JOptionPane.showMessageDialog(null, "Please fill Empty Text!!");
         
             else if(jTextArea1.getText().length()==0)  // Checking for empty field
                 
                     JOptionPane.showMessageDialog(null, "Please fill Empty Text!!");
+=======
+                    JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
+        
+            else if(jTextArea1.getText().length()==0)  // Checking for empty field
+                
+                    JOptionPane.showMessageDialog(null, "Empty fields detected ! Please fill up all fields");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             
             else{
                     String CustomerCode = jTextField1.getText();   // Collecting the input
@@ -376,8 +616,12 @@ public class Customer extends javax.swing.JFrame {
                 try{
                     Query("insert into customerinfo (CustomerCode,Name,RegCode,Address,PostalCode,City,State,Country,PhoneNo,Fax,ContPerson) "
                             + "values('"+CustomerCode+"','"+Name+"','"+RegCode+"','"+Address+"','"+PostalCode+"','"+City+"','"+State+"','"+Country+"','"+PhoneNo+"','"+Fax+"','"+ContPerson+"')");
+<<<<<<< HEAD
                           
                     Display_Table();
+=======
+                                        
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                 }
                     catch(Exception e){
                         e.printStackTrace();
@@ -394,10 +638,13 @@ public class Customer extends javax.swing.JFrame {
         
     }//GEN-LAST:event_custinfoMouseClicked
 
+<<<<<<< HEAD
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable custinfo;
@@ -405,6 +652,10 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+<<<<<<< HEAD
+=======
+    private javax.swing.JLabel jLabel1;
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -417,9 +668,12 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
@@ -433,6 +687,9 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+<<<<<<< HEAD
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+=======
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     // End of variables declaration//GEN-END:variables
 }

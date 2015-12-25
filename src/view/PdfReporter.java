@@ -26,6 +26,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+/**
+ *
+ * @author Lue Infoservices
+ */
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 public class PdfReporter {
 
     Document documento = null;
@@ -38,6 +45,7 @@ public class PdfReporter {
     List<String> custOrder = new ArrayList<String>();
     List<String> custOrderhed = new ArrayList<String>();
     
+<<<<<<< HEAD
     List<String> litemname = new ArrayList<String>();
     List<String> productmname = new ArrayList<String>();
     List<String> itemqty = new ArrayList<String>();
@@ -56,13 +64,24 @@ public class PdfReporter {
         String user = "root";
         String pwd = "admin";
        
+=======
+    
+      String JDBC_DRIVER = "com.mysql.jdbc.Driver";  // MySQL database connection
+      String url = "jdbc:mysql://localhost:3306/ybbom";
+      String user = "root";
+      String pwd = "admin";
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         int cid = 0;
         String name ="";
         int addcolor1=0;
         int addcolor2=0;
         int addtotal =0;
         int qty =0;
+<<<<<<< HEAD
         int prodqty =0;
+=======
+    
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     
     public void createPDF(File file, String id)  {
          Connection conn=null;
@@ -79,11 +98,22 @@ public class PdfReporter {
          custOrderhed.add("Product Code");
          custOrderhed.add("Color1");
          custOrderhed.add("Color2");
+<<<<<<< HEAD
          custOrderhed.add("Color3");
          custOrderhed.add("Qty");
    try{
       conn = DriverManager.getConnection(url,user,pwd); 
 String query="select multiple_order.ProdCode,multiple_order.Qty,multiple_order.customerId, product_raw.ItemCode,product_raw.Qty from multiple_order INNER JOIN product_raw ON multiple_order.ProdCode = product_raw.ProdCode Inner join rawmaterial on product_raw.ItemCode = rawmaterial.ItemCode where multiple_order.OrderNo IN ("+id+")";
+=======
+         custOrderhed.add("Color2");
+         custOrderhed.add("Qty");
+         
+         
+         
+   try{
+      conn = DriverManager.getConnection(url,user,pwd); 
+      String query="select customerorder.ProdCode,customerorder.customerId, product_raw.ItemCode,product_raw.Qty from customerorder INNER JOIN product_raw ON customerorder.ProdCode = product_raw.ProdCode Inner join rawmaterial on product_raw.ItemCode = rawmaterial.ItemCode where customerorder.OrderNo IN ("+id+")";
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     
       Statement sqlStmt = conn.createStatement();
       resultSet = sqlStmt.executeQuery(query);
@@ -91,14 +121,22 @@ String query="select multiple_order.ProdCode,multiple_order.Qty,multiple_order.c
       while(resultSet != null && resultSet.next())
                 {
                    String tid = resultSet.getString("ItemCode");
+<<<<<<< HEAD
                    prodqty =Integer.parseInt(resultSet.getString("Qty"));
                    litem.add(tid);
                    productqty.add(resultSet.getString("Qty"));
+=======
+                   litem.add(tid);
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
                    cid =  resultSet.getInt("customerId");
                    System.out.println("cid    "+cid);
                 }
       
+<<<<<<< HEAD
     resultSet = sqlStmt.executeQuery("select * from multiple_order where OrderNo='"+id+"'");
+=======
+      resultSet = sqlStmt.executeQuery("select * from customerorder where OrderNo='"+id+"'");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
       
       while(resultSet != null && resultSet.next())
                 {
@@ -115,16 +153,24 @@ String query="select multiple_order.ProdCode,multiple_order.Qty,multiple_order.c
                    name = resultSet.getString("Name");
                 }
       
+<<<<<<< HEAD
 //-------get rawmaterial all data----------------------------------------
             
       
       for (int j = 0; j < litem.size(); j++)
                 {
                     System.out.println("*****************"+litem.get(j));
+=======
+        //get rawmaterial all data----------------------------------------
+                for (int j = 0; j < litem.size(); j++)
+                {
+                   // resultSet = sqlStmt.executeQuery("select * from rawmaterial where ItemCode in('"+litem.get(j)+"')");
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
 resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,rawmaterial.ColorD2, product_raw.Qty from rawmaterial INNER JOIN product_raw ON rawmaterial.ItemCode = product_raw.ItemCode where rawmaterial.ItemCode IN ('"+litem.get(j)+"')"); 
                     while(resultSet != null && resultSet.next())
                 {
                     
+<<<<<<< HEAD
                 int qty = Integer.parseInt(resultSet.getString("Qty"));
                 int color1 = Integer.parseInt(resultSet.getString("ColorD1"));
                 int color2 = Integer.parseInt(resultSet.getString("ColorD2"));
@@ -170,6 +216,36 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,
                 }
                 }
                 
+=======
+                 int qty = Integer.parseInt(resultSet.getString("Qty"));
+                 int color1 = Integer.parseInt(resultSet.getString("ColorD1"));
+                 int color2 = Integer.parseInt(resultSet.getString("ColorD2"));
+                
+                    System.out.println("-------------"+color1+" "+qty);
+                    System.out.println("-------------"+color2+" "+qty);
+                 
+                 String col1 = String.valueOf(color1*qty);
+                 String col2 = String.valueOf(color2*qty);
+                 
+                 
+                 int addcol = Integer.parseInt(col1)+Integer.parseInt(col2);
+                 
+                 String addcolor = String.valueOf(addcol);
+                 addcolor1+=Integer.parseInt(col1);
+                 addcolor2+=Integer.parseInt(col2);
+                 addtotal+= color1+color2;
+                
+                 
+                 list.add(resultSet.getString("ItemCode"));
+                 list.add("");
+                 list.add(col1);
+                 list.add(col2);
+                 list.add(addcolor);
+                 
+             }
+                            
+        }
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
         //-----------------------------------------------------------------
         }catch(Exception e)
         {
@@ -183,17 +259,33 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,
             PdfWriter.getInstance(documento, fop);
             documento.open();
             
+<<<<<<< HEAD
 //Fonts
             Font fontHeader = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
             Font fontBody = new Font(Font.FontFamily.COURIER, 12, Font.NORMAL);
     
 //Product Report ----------------------------------------  
         
+=======
+            
+            //Fonts
+            Font fontHeader = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+            Font fontBody = new Font(Font.FontFamily.COURIER, 12, Font.NORMAL);
+            //Table for header
+            // TableModel model = table.getModel();
+      
+            
+    //Product Report ----------------------------------------  
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
            Paragraph ordate = new Paragraph();
            ordate.add(String.valueOf(new Date()));
            ordate.setSpacingAfter(15);
            documento.add(ordate);
            
+<<<<<<< HEAD
+=======
+           
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
            Paragraph orheader = new Paragraph();
            orheader.add("ORDER REPORT");
            orheader.setAlignment(Element.ALIGN_CENTER);
@@ -220,15 +312,28 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,
            PdfPTable prodorder = new PdfPTable(custOrderhed.size());
            prodorder.setWidthPercentage(100);
             
+<<<<<<< HEAD
             for (int j = 0; j < custOrderhed.size(); j++)
+=======
+            
+             for (int j = 0; j < custOrderhed.size(); j++)
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             {
                 Phrase frase = new Phrase(custOrderhed.get(j), fontHeader);
                 PdfPCell cell = new PdfPCell(frase);
                 cell.setBackgroundColor(new BaseColor(Color.lightGray.getRGB()));
                 prodorder.addCell(cell);
+<<<<<<< HEAD
             }
       documento.add(prodorder);
             
+=======
+                
+            }
+      documento.add(prodorder);
+            
+            
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             PdfPTable products= new PdfPTable(5);
             products.setWidthPercentage(100);
              
@@ -242,10 +347,17 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,
            orunderline1.add("______________________________________________________________________________");
            orunderline1.setSpacingBefore(75);
            documento.add(orunderline1);
+<<<<<<< HEAD
        
 //----------------------Order BY Meterial---------------------------        
             PdfPTable cabetabla = new PdfPTable(headertitel.size());
            cabetabla.setWidthPercentage(100);
+=======
+       //----------------------Order BY Meterial---------------------------        
+             
+            PdfPTable cabetabla = new PdfPTable(headertitel.size());
+            cabetabla.setWidthPercentage(100);
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
             
            Paragraph date = new Paragraph();
            date.add(String.valueOf(new Date()));
@@ -282,6 +394,7 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.ColorD1,
            hardware.add("HARDWARE");
            hardware.setSpacingAfter(15);
            documento.add(hardware);
+<<<<<<< HEAD
 
         PdfPTable headercolor= new PdfPTable(5);
        
@@ -674,12 +787,46 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.specific
             }
    //--         documento.add(pdfTable);
         
+=======
+           
+           
+
+           for (int j = 0; j < headertitel.size(); j++)
+            {
+                Phrase frase = new Phrase(headertitel.get(j), fontHeader);
+                PdfPCell cell = new PdfPCell(frase);
+                cell.setBackgroundColor(new BaseColor(Color.lightGray.getRGB()));
+                cabetabla.addCell(cell);
+                
+            }
+      documento.add(cabetabla);
+        
+        
+//Tabla for body
+        PdfPTable pdfTable= new PdfPTable(5);
+        pdfTable.setWidthPercentage(100);
+        int all=0;
+        for (int i = 0; i < list.size(); i++) 
+            {
+            pdfTable.addCell(new Phrase(list.get(i).toString(), fontBody));
+           
+            }
+            documento.add(pdfTable);
+         
+            
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
          footer.add("Total");
          footer.add("");
          footer.add(String.valueOf(addcolor1));
          footer.add(String.valueOf(addcolor2));
          footer.add(String.valueOf(addtotal));
             
+<<<<<<< HEAD
+=======
+            
+            
+            
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
          PdfPTable total = new PdfPTable(footer.size());
          total.setWidthPercentage(100);
          for (int j = 0; j < footer.size(); j++)
@@ -687,8 +834,16 @@ resultSet=sqlStmt.executeQuery("select rawmaterial.ItemCode,rawmaterial.specific
                 Phrase frase = new Phrase(footer.get(j), fontBody);
                 PdfPCell cell = new PdfPCell(frase);
                 total.addCell(cell);
+<<<<<<< HEAD
             }
    //--       documento.add(total);
+=======
+               
+            }
+          documento.add(total);
+       
+    
+>>>>>>> 9fd04b32170fa53620b6cf4c5a114a5f9785fc38
     } catch (Exception e) {
             // e.printStackTrace();
         } finally {
