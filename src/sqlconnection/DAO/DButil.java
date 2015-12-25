@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 class DButil {
     
-    private static final String connectionURL1="jdbc:sqlserver://localhost:1433;databaseName=BOMDB;user=TestingUser;password=12345";
+    private static final String connectionURL1="jdbc:sqlserver://localhost:1433;databaseName=ybbom;user=root;password=root";
 
    
         public static Connection getConnection(DBtype dbtype) throws SQLException{
